@@ -232,7 +232,7 @@ irish_df = irish_df.dropna()
 irish_df = irish_df[irish_df['headline_category'].isin(keep_news_cat)]
 '''
 
-########################## Exchange Rate Preprocessing
+# ########################## Exchange Rate Preprocessing
 ex_df = pd.read_csv('./exchange_rates.csv')
 ex_df['Date'] = pd.to_datetime(ex_df['Date'])
 new_df = new_df.merge(ex_df, on='Date')
@@ -300,6 +300,6 @@ new_df = new_df.merge(ex_df, on='Date')
 # print(new_df['Date'])
 # # 2002-01-02 to 2015-12-31
 
-new_df = new_df.drop('Date', axis=1)
+# new_df = new_df.drop('Date', axis=1)
 new_df.to_csv('processed_data.csv', index=False)
 print(new_df.columns)

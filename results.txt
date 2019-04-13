@@ -1,154 +1,180 @@
+==========Classification Report for LogsticRegression:==========
+              precision    recall  f1-score   support
+
+         0.0       0.57      0.60      0.59       505
+         1.0       0.60      0.58      0.59       534
+
+   micro avg       0.59      0.59      0.59      1039
+   macro avg       0.59      0.59      0.59      1039
+weighted avg       0.59      0.59      0.59      1039
+
+==========Accuracy Report for LogsticRegression:==========
+0.588065447545717
+
+
 Train on 2180 samples, validate on 243 samples
 Epoch 1/16
-2180/2180 [==============================] - 0s 168us/step - loss: 0.6949 - acc: 0.5165 - val_loss: 0.6949 - val_acc: 0.5144
+2180/2180 [==============================] - 0s 175us/step - loss: 0.6962 - acc: 0.4945 - val_loss: 0.6933 - val_acc: 0.5267
 
-Epoch 00001: val_loss improved from inf to 0.69489, saving model to ./weights/0.69489_0001.weights.h5
+Epoch 00001: val_loss improved from inf to 0.69325, saving model to ./weights/0.69325_0001.weights.h5
 Epoch 2/16
-2180/2180 [==============================] - 0s 43us/step - loss: 0.6874 - acc: 0.5537 - val_loss: 0.6942 - val_acc: 0.5144
+2180/2180 [==============================] - 0s 45us/step - loss: 0.6859 - acc: 0.5720 - val_loss: 0.6947 - val_acc: 0.5350
 
-Epoch 00002: val_loss improved from 0.69489 to 0.69415, saving model to ./weights/0.69415_0002.weights.h5
+Epoch 00002: val_loss did not improve from 0.69325
 Epoch 3/16
-2180/2180 [==============================] - 0s 43us/step - loss: 0.6772 - acc: 0.5908 - val_loss: 0.6966 - val_acc: 0.5103
+2180/2180 [==============================] - 0s 44us/step - loss: 0.6749 - acc: 0.6142 - val_loss: 0.6945 - val_acc: 0.5226
 
-Epoch 00003: val_loss did not improve from 0.69415
+Epoch 00003: val_loss did not improve from 0.69325
 Epoch 4/16
-2180/2180 [==============================] - 0s 44us/step - loss: 0.6551 - acc: 0.6454 - val_loss: 0.7098 - val_acc: 0.5021
+2180/2180 [==============================] - 0s 43us/step - loss: 0.6550 - acc: 0.6560 - val_loss: 0.7049 - val_acc: 0.4897
 
-Epoch 00004: val_loss did not improve from 0.69415
+Epoch 00004: val_loss did not improve from 0.69325
 Epoch 00004: early stopping
 ==========Classification Report for Vanilla:==========
               precision    recall  f1-score   support
 
-         0.0       0.48      0.67      0.56       505
-         1.0       0.51      0.32      0.39       534
+         0.0       0.48      0.60      0.53       505
+         1.0       0.51      0.39      0.44       534
 
    micro avg       0.49      0.49      0.49      1039
-   macro avg       0.50      0.50      0.48      1039
-weighted avg       0.50      0.49      0.47      1039
+   macro avg       0.49      0.49      0.49      1039
+weighted avg       0.49      0.49      0.49      1039
 
 ==========Accuracy Report for Vanilla:==========
-0.49085659287776706
+0.4918190567853705
 
 Train on 2180 samples, validate on 243 samples
 Epoch 1/16
-2180/2180 [==============================] - 3s 1ms/step - loss: 0.6967 - acc: 0.4982 - val_loss: 0.6929 - val_acc: 0.4897
+2180/2180 [==============================] - 3s 1ms/step - loss: 0.6951 - acc: 0.5069 - val_loss: 0.6940 - val_acc: 0.4979
 
-Epoch 00001: val_loss improved from 0.69415 to 0.69292, saving model to ./weights/0.69292_0001.weights.h5
+Epoch 00001: val_loss did not improve from 0.69325
 Epoch 2/16
-2180/2180 [==============================] - 1s 575us/step - loss: 0.6934 - acc: 0.5041 - val_loss: 0.6927 - val_acc: 0.4938
+2180/2180 [==============================] - 1s 568us/step - loss: 0.6932 - acc: 0.5128 - val_loss: 0.6938 - val_acc: 0.4979
 
-Epoch 00002: val_loss improved from 0.69292 to 0.69269, saving model to ./weights/0.69269_0002.weights.h5
+Epoch 00002: val_loss did not improve from 0.69325
 Epoch 3/16
-2180/2180 [==============================] - 1s 581us/step - loss: 0.6929 - acc: 0.5170 - val_loss: 0.6928 - val_acc: 0.4733
+2180/2180 [==============================] - 1s 597us/step - loss: 0.6927 - acc: 0.5211 - val_loss: 0.6941 - val_acc: 0.4774
 
-Epoch 00003: val_loss did not improve from 0.69269
+Epoch 00003: val_loss did not improve from 0.69325
 Epoch 4/16
-2180/2180 [==============================] - 1s 574us/step - loss: 0.6927 - acc: 0.5161 - val_loss: 0.6928 - val_acc: 0.5267
+2180/2180 [==============================] - 1s 596us/step - loss: 0.6924 - acc: 0.5353 - val_loss: 0.6950 - val_acc: 0.4527
 
-Epoch 00004: val_loss did not improve from 0.69269
+Epoch 00004: val_loss did not improve from 0.69325
 Epoch 00004: early stopping
 ==========Classification Report for GRU:==========
               precision    recall  f1-score   support
 
-         0.0       0.48      0.58      0.52       505
-         1.0       0.51      0.41      0.46       534
+         0.0       0.49      0.71      0.58       505
+         1.0       0.51      0.29      0.37       534
 
    micro avg       0.49      0.49      0.49      1039
-   macro avg       0.49      0.50      0.49      1039
-weighted avg       0.50      0.49      0.49      1039
+   macro avg       0.50      0.50      0.47      1039
+weighted avg       0.50      0.49      0.47      1039
 
 ==========Accuracy Report for GRU:==========
-0.49278152069297404
+0.49470644850818096
 
 Train on 2180 samples, validate on 243 samples
 Epoch 1/16
-2180/2180 [==============================] - 3s 1ms/step - loss: 0.6934 - acc: 0.5193 - val_loss: 0.6932 - val_acc: 0.5185
+2180/2180 [==============================] - 3s 1ms/step - loss: 0.6942 - acc: 0.5078 - val_loss: 0.6926 - val_acc: 0.5556
 
-Epoch 00001: val_loss did not improve from 0.69269
+Epoch 00001: val_loss improved from 0.69325 to 0.69262, saving model to ./weights/0.69262_0001.weights.h5
 Epoch 2/16
-2180/2180 [==============================] - 1s 663us/step - loss: 0.6931 - acc: 0.5197 - val_loss: 0.6932 - val_acc: 0.5267
+2180/2180 [==============================] - 1s 673us/step - loss: 0.6931 - acc: 0.4950 - val_loss: 0.6926 - val_acc: 0.5144
 
-Epoch 00002: val_loss did not improve from 0.69269
+Epoch 00002: val_loss improved from 0.69262 to 0.69259, saving model to ./weights/0.69259_0002.weights.h5
 Epoch 3/16
-2180/2180 [==============================] - 1s 660us/step - loss: 0.6931 - acc: 0.5188 - val_loss: 0.6934 - val_acc: 0.5267
+2180/2180 [==============================] - 2s 697us/step - loss: 0.6930 - acc: 0.4968 - val_loss: 0.6923 - val_acc: 0.5350
 
-Epoch 00003: val_loss did not improve from 0.69269
+Epoch 00003: val_loss improved from 0.69259 to 0.69225, saving model to ./weights/0.69225_0003.weights.h5
 Epoch 4/16
-2180/2180 [==============================] - 2s 728us/step - loss: 0.6930 - acc: 0.5161 - val_loss: 0.6936 - val_acc: 0.5309
+2180/2180 [==============================] - 2s 761us/step - loss: 0.6929 - acc: 0.5096 - val_loss: 0.6924 - val_acc: 0.5185
 
-Epoch 00004: val_loss did not improve from 0.69269
+Epoch 00004: val_loss did not improve from 0.69225
 Epoch 00004: early stopping
 ==========Classification Report for LSTM:==========
               precision    recall  f1-score   support
 
-         0.0       0.48      0.96      0.64       505
-         1.0       0.44      0.03      0.05       534
+         0.0       0.50      0.45      0.47       505
+         1.0       0.53      0.58      0.55       534
 
-   micro avg       0.48      0.48      0.48      1039
-   macro avg       0.46      0.50      0.35      1039
-weighted avg       0.46      0.48      0.34      1039
+   micro avg       0.52      0.52      0.52      1039
+   macro avg       0.51      0.51      0.51      1039
+weighted avg       0.51      0.52      0.51      1039
 
 ==========Accuracy Report for LSTM:==========
-0.4821944177093359
+0.5158806544754572
 
-==========Classification Report for XGBoost:==========
+==========Classification Report for RandomForest:==========
               precision    recall  f1-score   support
 
-         0.0       0.70      0.72      0.71       505
-         1.0       0.73      0.70      0.72       534
-
-   micro avg       0.71      0.71      0.71      1039
-   macro avg       0.71      0.71      0.71      1039
-weighted avg       0.71      0.71      0.71      1039
-
-==========Accuracy Report for XGBoost:==========
-0.7131857555341675
-
-[LightGBM] [Warning] Starting from the 2.1.2 version, default value for the "boost_from_average" parameter in "binary" objective is true.
-This may cause significantly different results comparing to the previous versions of LightGBM.
-Try to set boost_from_average=false, if your old models produce bad results
-[LightGBM] [Info] Number of positive: 1044, number of negative: 1136
-[LightGBM] [Info] Total Bins 84450
-[LightGBM] [Info] Number of data: 2180, number of used features: 1525
-[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.478899 -> initscore=-0.084454
-[LightGBM] [Info] Start training from score -0.084454
-[1] train's binary_error: 0.179358  eval's binary_error: 0.337449
-Training until validation scores don't improve for 10 rounds.
-[2] train's binary_error: 0.165138  eval's binary_error: 0.308642
-[3] train's binary_error: 0.138073  eval's binary_error: 0.320988
-[4] train's binary_error: 0.130734  eval's binary_error: 0.333333
-[5] train's binary_error: 0.126147  eval's binary_error: 0.312757
-[6] train's binary_error: 0.120642  eval's binary_error: 0.325103
-[7] train's binary_error: 0.112385  eval's binary_error: 0.304527
-[8] train's binary_error: 0.108716  eval's binary_error: 0.308642
-[9] train's binary_error: 0.102294  eval's binary_error: 0.304527
-[10]  train's binary_error: 0.103211  eval's binary_error: 0.304527
-[11]  train's binary_error: 0.0972477 eval's binary_error: 0.308642
-[12]  train's binary_error: 0.0949541 eval's binary_error: 0.304527
-[13]  train's binary_error: 0.0917431 eval's binary_error: 0.300412
-[14]  train's binary_error: 0.0889908 eval's binary_error: 0.312757
-[15]  train's binary_error: 0.0844037 eval's binary_error: 0.296296
-[16]  train's binary_error: 0.0834862 eval's binary_error: 0.308642
-[17]  train's binary_error: 0.0834862 eval's binary_error: 0.320988
-[18]  train's binary_error: 0.0779817 eval's binary_error: 0.320988
-[19]  train's binary_error: 0.0743119 eval's binary_error: 0.320988
-[20]  train's binary_error: 0.0683486 eval's binary_error: 0.316872
-[21]  train's binary_error: 0.0633028 eval's binary_error: 0.316872
-[22]  train's binary_error: 0.0582569 eval's binary_error: 0.312757
-[23]  train's binary_error: 0.0550459 eval's binary_error: 0.312757
-[24]  train's binary_error: 0.0573394 eval's binary_error: 0.312757
-[25]  train's binary_error: 0.0495413 eval's binary_error: 0.320988
-Early stopping, best iteration is:
-[15]  train's binary_error: 0.0844037 eval's binary_error: 0.296296
-==========Classification Report for LGBM:==========
-              precision    recall  f1-score   support
-
-         0.0       0.72      0.73      0.73       505
-         1.0       0.74      0.73      0.74       534
+         0.0       0.71      0.74      0.72       505
+         1.0       0.74      0.71      0.73       534
 
    micro avg       0.73      0.73      0.73      1039
    macro avg       0.73      0.73      0.73      1039
 weighted avg       0.73      0.73      0.73      1039
 
+==========Accuracy Report for RandomForest:==========
+0.7256977863330125
+
+==========Classification Report for XGBoost:==========
+              precision    recall  f1-score   support
+
+         0.0       0.72      0.71      0.72       505
+         1.0       0.73      0.74      0.73       534
+
+   micro avg       0.73      0.73      0.73      1039
+   macro avg       0.73      0.73      0.73      1039
+weighted avg       0.73      0.73      0.73      1039
+
+==========Accuracy Report for XGBoost:==========
+0.7256977863330125
+
+[LightGBM] [Warning] Starting from the 2.1.2 version, default value for the "boost_from_average" parameter in "binary" objective is true.
+This may cause significantly different results comparing to the previous versions of LightGBM.
+Try to set boost_from_average=false, if your old models produce bad results
+[LightGBM] [Info] Number of positive: 1044, number of negative: 1136
+[LightGBM] [Info] Total Bins 46075
+[LightGBM] [Info] Number of data: 2180, number of used features: 1375
+[LightGBM] [Info] [binary:BoostFromScore]: pavg=0.478899 -> initscore=-0.084454
+[LightGBM] [Info] Start training from score -0.084454
+[1] train's binary_error: 0.186697  eval's binary_error: 0.296296
+Training until validation scores don't improve for 10 rounds.
+[2] train's binary_error: 0.159174  eval's binary_error: 0.300412
+[3] train's binary_error: 0.151376  eval's binary_error: 0.300412
+[4] train's binary_error: 0.13578 eval's binary_error: 0.312757
+[5] train's binary_error: 0.129817  eval's binary_error: 0.304527
+[6] train's binary_error: 0.121101  eval's binary_error: 0.312757
+[7] train's binary_error: 0.118349  eval's binary_error: 0.312757
+[8] train's binary_error: 0.113303  eval's binary_error: 0.308642
+[9] train's binary_error: 0.109174  eval's binary_error: 0.304527
+[10]  train's binary_error: 0.111927  eval's binary_error: 0.308642
+[11]  train's binary_error: 0.104587  eval's binary_error: 0.308642
+Early stopping, best iteration is:
+[1] train's binary_error: 0.186697  eval's binary_error: 0.296296
+==========Classification Report for LGBM:==========
+              precision    recall  f1-score   support
+
+         0.0       0.66      0.77      0.71       505
+         1.0       0.74      0.63      0.68       534
+
+   micro avg       0.69      0.69      0.69      1039
+   macro avg       0.70      0.70      0.69      1039
+weighted avg       0.70      0.69      0.69      1039
+
 ==========Accuracy Report for LGBM:==========
-0.7314725697786333
+0.6939364773820982
+
+==========Classification Report for Ensemble:==========
+              precision    recall  f1-score   support
+
+         0.0       0.73      0.75      0.74       505
+         1.0       0.76      0.73      0.74       534
+
+   micro avg       0.74      0.74      0.74      1039
+   macro avg       0.74      0.74      0.74      1039
+weighted avg       0.74      0.74      0.74      1039
+
+==========Accuracy Report for Ensemble:==========
+0.7410972088546679
