@@ -35,7 +35,7 @@ def get_subjectivity(text):
 
 
 ########################## DJI Preprocessing
-df = pd.read_csv('data.csv')
+df = pd.read_csv('dji.csv')
 df['Date'] = pd.to_datetime(df['Date'], format="%d/%m/%Y")
 df = df[df['Date'] >= datetime.date(1999, 2, 8)].reset_index(drop=True)
 
@@ -122,28 +122,45 @@ df = df[df['Date'] <= datetime.date(2015, 12, 31)].reset_index(drop=True)
 ########################## Crude Oil Price Preprocessing
 cdf = pd.read_csv('./Energy_Price.csv')
 cdf = cdf.dropna()
+cdf = cdf[cdf['Crude Oil'] != 0]
 
 ########### Compute Price Change
-size = cdf.shape[0]
-output_list = []
-for i, row in cdf.iterrows():
-    cur = row['Crude Oil']
-    if (i == 0):
-        output_list.append(np.nan)
-        prev = cur
-        continue
-    else:
-        if cur > prev:
-            output_list.append(1)
-        else:
-            output_list.append(0)
+# size = cdf.shape[0]
+# output_list = []
+# for i, row in cdf.iterrows():
+#     # cur = row['Crude Oil']
+#     # if (i == 0):
+#     #     output_list.append(np.nan)
+#     #     prev = cur
+#     #     continue
+#     # else:
+#     #     if cur > prev:
+#     #         output_list.append(1)
+#     #     else:
+#     #         output_list.append(0)
 
-    prev = cur
+#     # prev = cur
+#     if row['Crude Oil'] > 0:
+#         output_list.append(1)
+#     else:
+#         output_list.append(0)
+# #end for
+
+# cdf['PChange'] = pd.Series(output_list)
+
+cols = list(cdf.columns)
+cols.remove('Date')
+
+for col in cols:
+    # cdf[col + '_Change'] = cdf[col].apply(lambda x: 1 if x > 0 else 0)
+    cdf[col + '_MA'] = cdf[col].rolling(window=200).mean()
 #end for
-cdf['PChange'] = pd.Series(output_list)
+
+cdf['Crude Oil_Change'] = cdf['Crude Oil'].apply(lambda x: 1 if x > 0 else 0)
 
 cdf['Date'] = cdf['Date'].apply(lambda x: x[:-2] + '20' + x[-2:])
 cdf['Date'] = pd.to_datetime(cdf['Date'], format="%d/%m/%Y")
+cdf = cdf.dropna()
 
 new_df = df.merge(cdf, on='Date')
 
@@ -233,9 +250,15 @@ irish_df = irish_df[irish_df['headline_category'].isin(keep_news_cat)]
 '''
 
 # ########################## Exchange Rate Preprocessing
-ex_df = pd.read_csv('./exchange_rates.csv')
-ex_df['Date'] = pd.to_datetime(ex_df['Date'])
-new_df = new_df.merge(ex_df, on='Date')
+# ex_df = pd.read_csv('./exchange_rates.csv')
+# ex_df['Date'] = pd.to_datetime(ex_df['Date'])
+# cols = list(ex_df.columns)
+# cols.remove('Date')
+# scaler = MinMaxScaler(feature_range=(-1, 1))
+# scaled = scaler.fit_transform(ex_df[cols])
+# ex_df[cols] = pd.DataFrame(scaled)
+
+# new_df = new_df.merge(ex_df, on='Date')
 
 '''
 # print(ex_df.columns)
@@ -296,10 +319,24 @@ new_df = new_df.merge(ex_df, on='Date')
 #        'RXI_N.B.HK_Change', 'RXI_N.B.SL_Change']
 '''
 
+# ########################## Actual Crude Oil Price
+# oil_df = pd.read_csv('Crude Oil Price from 1986.csv')
+# oil_df['OilPrice'] = oil_df['OilPrice'].apply(lambda x: np.nan if x == '.' else x)
+# oil_df['Date'] = oil_df['Date'].apply(lambda x: x[:-2] + '20' + x[-2:] if int(x[-2:]) < 20 else x[:-2] + '19' + x[-2:])
+# oil_df['Date'] = pd.to_datetime(oil_df['Date'], format="%d/%m/%Y")
+# oil_df = oil_df.dropna()
+
+# scaler = MinMaxScaler(feature_range=(-1, 1))
+# scaled = scaler.fit_transform(oil_df[['OilPrice']])
+# oil_df['OilPrice'] = pd.DataFrame(scaled)
+
+# new_df = new_df.merge(oil_df, on='Date')
+
 # ########################## Output Processed Data
 # print(new_df['Date'])
 # # 2002-01-02 to 2015-12-31
 
 # new_df = new_df.drop('Date', axis=1)
 new_df.to_csv('processed_data.csv', index=False)
+print(new_df.shape)
 print(new_df.columns)
