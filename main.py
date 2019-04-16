@@ -317,8 +317,6 @@ def main():
 
     print()
 
-    input()
-
     X, Y = prepare_data(df, cat_features=CAT_FEATURES, cont_features=CONT_FEATURES, target_feature=TARGET_FEATURE, window=win_size)
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=seed)
 
